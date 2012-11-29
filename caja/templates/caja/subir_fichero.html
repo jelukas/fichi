@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static from staticfiles %}
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/caja.css' %}" />
+</head>
+<body>
+    {% block content %}
+    <section id="content">
+        Subir Fichero
+        {% csrf_token %}
+        <input type="file" name="file" id="id_file"  data-url="/caja/subir_fichero/"/>
+    </section>
+    <div id="dropzone" class="fade well">Drop files here</div>
+    {% endblock %}
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="{{ STATIC_URL }}js/jquery.ui.widget.js"></script>
+    <script src="{{ STATIC_URL }}js/jquery.iframe-transport.js"></script>
+    <script src="{{ STATIC_URL }}js/jquery.fileupload.js"></script>
+    <script src="{{ STATIC_URL }}js/main.js"></script>
+    <script src="{{ STATIC_URL }}js/csrf.js"></script>
+
+</body>
+</html>
